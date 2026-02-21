@@ -1,0 +1,118 @@
+{
+  "nodes": [
+    {
+      "id": "input_node",
+      "type": "Input",
+      "label": "User Input",
+      "nodeCategory": "input"
+    },
+    {
+      "id": "study_plan_agent",
+      "type": "Agent",
+      "label": "Study Plan Agent",
+      "nodeCategory": "agent"
+    },
+    {
+      "id": "github_monitor_agent",
+      "type": "Agent",
+      "label": "GitHub Monitor Agent",
+      "nodeCategory": "agent"
+    },
+    {
+      "id": "deadline_reminder_agent",
+      "type": "Agent",
+      "label": "Deadline Reminder Agent",
+      "nodeCategory": "agent"
+    },
+    {
+      "id": "resource_recommender_agent",
+      "type": "Agent",
+      "label": "Resource Recommender Agent",
+      "nodeCategory": "agent"
+    }
+  ],
+  "edges": [
+    { "source": "input_node", "target": "study_plan_agent" },
+    { "source": "input_node", "target": "github_monitor_agent" },
+    { "source": "input_node", "target": "deadline_reminder_agent" },
+    { "source": "input_node", "target": "resource_recommender_agent" }
+  ],
+  "agents": [
+    {
+      "node_id": "study_plan_agent",
+      "agent_id": "6999619fc066ed107671ac69",
+      "name": "Study Plan Agent",
+      "description": "Generates personalized weekly study plans with intelligent time-blocking. Performs smart conflict resolution by analyzing exam difficulty, project importance, and current performance to prioritize tasks optimally.",
+      "provider": "openai",
+      "model": "gpt-4.1",
+      "temperature": 0.4,
+      "top_p": 0.95,
+      "tools": [],
+      "capabilities": {
+        "image_output": false,
+        "voice": false,
+        "file_output": false
+      }
+    },
+    {
+      "node_id": "github_monitor_agent",
+      "agent_id": "699961ca72a2e3b0eaab977e",
+      "name": "GitHub Monitor Agent",
+      "description": "Fetches project milestones, open issues, and deadlines from connected GitHub repositories. Summarizes project status and surfaces upcoming deliverables for integration into the study plan.",
+      "provider": "openai",
+      "model": "gpt-4.1",
+      "temperature": 0.2,
+      "top_p": 1.0,
+      "tools": [
+        {
+          "tool_name": "github",
+          "tool_source": "composio",
+          "action_names": ["GITHUB_CREATE_AN_ISSUE", "GITHUB_ACTIVITY_LIST_REPO_S_STARRED_BY_AUTHENTICATED_USER"]
+        }
+      ],
+      "capabilities": {
+        "image_output": false,
+        "voice": false,
+        "file_output": false
+      }
+    },
+    {
+      "node_id": "deadline_reminder_agent",
+      "agent_id": "699961a0730bbd74d53e8a0b",
+      "name": "Deadline Reminder Agent",
+      "description": "Runs daily to review all upcoming academic and project deadlines. Generates prioritized reminder notifications with suggested preparation actions.",
+      "provider": "openai",
+      "model": "gpt-4.1",
+      "temperature": 0.3,
+      "top_p": 1.0,
+      "tools": [],
+      "capabilities": {
+        "image_output": false,
+        "voice": false,
+        "file_output": false
+      },
+      "schedule": {
+        "schedule_id": "699961b7399dfadeac37e2b2",
+        "cron_expression": "0 8 * * *",
+        "timezone": "America/New_York",
+        "message": "Review all upcoming academic and project deadlines. Generate prioritized reminders for today with preparation actions."
+      }
+    },
+    {
+      "node_id": "resource_recommender_agent",
+      "agent_id": "699961a0a63b170a3b8170f5",
+      "name": "Resource Recommender Agent",
+      "description": "Recommends relevant video courses and tutorials from platforms like YouTube, Udemy, and Coursera based on the student's current subjects, upcoming exams, and identified knowledge gaps.",
+      "provider": "perplexity",
+      "model": "sonar-pro",
+      "temperature": 0.5,
+      "top_p": 0.95,
+      "tools": [],
+      "capabilities": {
+        "image_output": false,
+        "voice": false,
+        "file_output": false
+      }
+    }
+  ]
+}

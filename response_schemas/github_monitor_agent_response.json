@@ -1,0 +1,68 @@
+{
+  "agent_name": "GitHub Monitor Agent",
+  "agent_id": "699961ca72a2e3b0eaab977e",
+  "description": "Fetches project milestones, open issues, and deadlines from connected GitHub repositories. Summarizes project status and surfaces upcoming deliverables for integration into the study plan.",
+  "agent_type": "json",
+  "accessor": "result",
+  "auto_generated": true,
+  "response_schema": {
+    "repository_name": "string",
+    "milestones": [
+      {
+        "title": "string",
+        "description": "string",
+        "due_date": "string",
+        "progress_percentage": "number",
+        "open_issues": "number",
+        "closed_issues": "number"
+      }
+    ],
+    "open_issues": [
+      {
+        "title": "string",
+        "labels": "string",
+        "created_at": "string",
+        "priority": "string"
+      }
+    ],
+    "summary": "string",
+    "total_open_issues": "number",
+    "upcoming_deadlines": [
+      {
+        "item": "string",
+        "due_date": "string",
+        "type": "string"
+      }
+    ]
+  },
+  "example_response": {
+    "repository_name": "sample string",
+    "milestones": [
+      {
+        "title": "sample string",
+        "description": "sample string",
+        "due_date": "sample string",
+        "progress_percentage": 0,
+        "open_issues": 0,
+        "closed_issues": 0
+      }
+    ],
+    "open_issues": [
+      {
+        "title": "sample string",
+        "labels": "sample string",
+        "created_at": "sample string",
+        "priority": "sample string"
+      }
+    ],
+    "summary": "sample string",
+    "total_open_issues": 0,
+    "upcoming_deadlines": [
+      {
+        "item": "sample string",
+        "due_date": "sample string",
+        "type": "sample string"
+      }
+    ]
+  }
+}

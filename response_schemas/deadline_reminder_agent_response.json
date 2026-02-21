@@ -1,0 +1,44 @@
+{
+  "agent_name": "Deadline Reminder Agent",
+  "agent_id": "699961a0730bbd74d53e8a0b",
+  "description": "Runs daily to review all upcoming academic and project deadlines. Generates prioritized reminder notifications with suggested preparation actions.",
+  "agent_type": "json",
+  "accessor": "result",
+  "auto_generated": true,
+  "response_schema": {
+    "daily_briefing": "string",
+    "reminders": [
+      {
+        "item": "string",
+        "category": "string",
+        "due_date": "string",
+        "days_remaining": "number",
+        "priority": "string",
+        "preparation_actions": [
+          "string"
+        ]
+      }
+    ],
+    "urgent_count": "number",
+    "total_deadlines": "number",
+    "date": "string"
+  },
+  "example_response": {
+    "daily_briefing": "sample string",
+    "reminders": [
+      {
+        "item": "sample string",
+        "category": "sample string",
+        "due_date": "sample string",
+        "days_remaining": 0,
+        "priority": "sample string",
+        "preparation_actions": [
+          "sample string"
+        ]
+      }
+    ],
+    "urgent_count": 0,
+    "total_deadlines": 0,
+    "date": "sample string"
+  }
+}

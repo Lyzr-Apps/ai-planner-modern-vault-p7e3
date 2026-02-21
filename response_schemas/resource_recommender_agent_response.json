@@ -1,0 +1,38 @@
+{
+  "agent_name": "Resource Recommender Agent",
+  "agent_id": "699961a0a63b170a3b8170f5",
+  "description": "Recommends relevant video courses and tutorials from platforms like YouTube, Udemy, and Coursera based on the student's current subjects, upcoming exams, and identified knowledge gaps.",
+  "agent_type": "json",
+  "accessor": "result",
+  "auto_generated": true,
+  "response_schema": {
+    "recommendations": [
+      {
+        "subject": "string",
+        "title": "string",
+        "platform": "string",
+        "duration": "string",
+        "relevance_score": "number",
+        "description": "string",
+        "url": "string"
+      }
+    ],
+    "summary": "string",
+    "total_resources": "number"
+  },
+  "example_response": {
+    "recommendations": [
+      {
+        "subject": "sample string",
+        "title": "sample string",
+        "platform": "sample string",
+        "duration": "sample string",
+        "relevance_score": 0,
+        "description": "sample string",
+        "url": "sample string"
+      }
+    ],
+    "summary": "sample string",
+    "total_resources": 0
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "app_name": "StudySync AI Study Planner",
+  "created_at": "2026-02-21T07:41:00Z",
+  "agents": {
+    "study_plan_agent": {
+      "agent_id": "6999619fc066ed107671ac69",
+      "name": "Study Plan Agent",
+      "provider": "openai",
+      "model": "gpt-4.1"
+    },
+    "github_monitor_agent": {
+      "agent_id": "699961ca72a2e3b0eaab977e",
+      "name": "GitHub Monitor Agent",
+      "provider": "openai",
+      "model": "gpt-4.1"
+    },
+    "deadline_reminder_agent": {
+      "agent_id": "699961a0730bbd74d53e8a0b",
+      "name": "Deadline Reminder Agent",
+      "provider": "openai",
+      "model": "gpt-4.1"
+    },
+    "resource_recommender_agent": {
+      "agent_id": "699961a0a63b170a3b8170f5",
+      "name": "Resource Recommender Agent",
+      "provider": "perplexity",
+      "model": "sonar-pro"
+    }
+  },
+  "schedules": {
+    "deadline_reminder_schedule": {
+      "schedule_id": "699961b7399dfadeac37e2b2",
+      "agent_id": "699961a0730bbd74d53e8a0b",
+      "cron_expression": "0 8 * * *",
+      "timezone": "America/New_York",
+      "is_active": true,
+      "message": "Review all upcoming academic and project deadlines. Generate prioritized reminders for today with preparation actions."
+    }
+  },
+  "agent_ids": [
+    "6999619fc066ed107671ac69",
+    "699961ca72a2e3b0eaab977e",
+    "699961a0730bbd74d53e8a0b",
+    "699961a0a63b170a3b8170f5"
+  ],
+  "schedule_ids": [
+    "699961b7399dfadeac37e2b2"
+  ]
+}

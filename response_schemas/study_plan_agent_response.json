@@ -1,0 +1,62 @@
+{
+  "agent_name": "Study Plan Agent",
+  "agent_id": "6999619fc066ed107671ac69",
+  "description": "Generates personalized weekly study plans with intelligent time-blocking. Performs smart conflict resolution by analyzing exam difficulty, project importance, and current performance to prioritize tasks optimally.",
+  "agent_type": "json",
+  "accessor": "result",
+  "auto_generated": true,
+  "response_schema": {
+    "weekly_plan": [
+      {
+        "day": "string",
+        "time_blocks": [
+          {
+            "start_time": "string",
+            "end_time": "string",
+            "subject": "string",
+            "activity_type": "string",
+            "priority": "string",
+            "description": "string"
+          }
+        ]
+      }
+    ],
+    "conflict_resolutions": [
+      {
+        "conflict": "string",
+        "resolution": "string",
+        "reasoning": "string"
+      }
+    ],
+    "summary": "string",
+    "total_study_hours": "number",
+    "total_project_hours": "number"
+  },
+  "example_response": {
+    "weekly_plan": [
+      {
+        "day": "sample string",
+        "time_blocks": [
+          {
+            "start_time": "sample string",
+            "end_time": "sample string",
+            "subject": "sample string",
+            "activity_type": "sample string",
+            "priority": "sample string",
+            "description": "sample string"
+          }
+        ]
+      }
+    ],
+    "conflict_resolutions": [
+      {
+        "conflict": "sample string",
+        "resolution": "sample string",
+        "reasoning": "sample string"
+      }
+    ],
+    "summary": "sample string",
+    "total_study_hours": 0,
+    "total_project_hours": 0
+  }
+}
